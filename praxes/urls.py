@@ -18,4 +18,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('jquery/', views.jquery, name='jqery'),
+    path('namen/', views.namen, name='namen')
 ]

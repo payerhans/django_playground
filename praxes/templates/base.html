@@ -1,7 +1,23 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
 <!doctype html>
 <html lang="de">
     <head>
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <script>
+                $(document).ready(function(){
+                    $("p").click(function(){
+                        $(this).hide();
+                    });
+                });
+                </script>
     </head>
 <body>
         <nav class="nav">
@@ -19,6 +35,9 @@
             {% endblock %}
             </div>
         </div>
+        <p>hallo!</p>
     </div>
+   
+  
 </body>
 </html>

@@ -1,4 +1,10 @@
 {% extends 'base.html' %}
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
 
 {% block content %}
 <h1>{{ titel }}</h1>
@@ -6,4 +12,12 @@
 
     {{ nachricht }}
 </p>
+{% bootstrap_button "Save" button_type="submit" button_class="btn-primary" %}
+<div>{% buttons submit='OK' reset="Cancel" %}{% endbuttons %}</div>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 {% endblock %}
