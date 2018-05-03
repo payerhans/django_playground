@@ -1,0 +1,35 @@
+{# Load the tag library #}
+{% load bootstrap4 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+<!doctype html>
+<html lang="de">
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          
+    </head>
+<body>
+        <nav class="nav">
+                <a class="nav-link " href="{% url 'mform:index' %}">Home</a>
+                <a class="nav-link" href="{% url 'mform:form1' %}">Form1</a>
+                <!-- <a class="nav-link" href="{% url 'praxes:namen' %}">Namen</a> -->
+        </nav>
+              
+
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+   
+  
+</body>
+</html>
